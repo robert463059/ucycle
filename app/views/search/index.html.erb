@@ -1,0 +1,26 @@
+	<%= form_tag :search, url: search_path do %>
+ 		<div class="form-group">
+ 			<%= label_tag :item_title %>
+ 			<%= select_tag :item_title, options_for_select(Posting.all.map{|x| x.item_title}.uniq) %>
+ 		</div>
+ 		<%= submit_tag "Submit" %>
+ 	<% end %><br>
+
+<% if "Submit" %>
+
+<% @posting.each do |p|  %>
+
+<a href="/postings/<%= p.id %>/"><%= p.item_title %></a><br>
+
+ <% p.images.each do |image| %>
+		<%= image_tag image %>
+  <% end %><br>
+
+<%= p.item_description %><br><br>
+
+<% end %><br>
+
+<% else %>
+
+<% end %>
+

@@ -1,0 +1,21 @@
+  <%= link_to 'Delete Posting', posting_path, method: :delete, 'data-confirm' => 'Are you sure?' %>
+
+<%= link_to 'Edit Posting', edit_posting_path  %><br>
+<%= @posting.item_title %><br>
+<% @posting.images.each do |image| %>
+		<%= image_tag image %>
+  <% end %>
+
+  <br>
+  <%= @posting.item_description %><br>
+
+<iframe
+  width="350"
+  height="350"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBrsJ45J6WAoZPqKQTFsOv8qqLCoMaCtFg
+    &q=<%= @posting.user.address %>" allowfullscreen>
+</iframe>
+<br>
+
+

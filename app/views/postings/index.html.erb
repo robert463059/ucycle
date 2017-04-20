@@ -1,0 +1,3 @@
+<% @posting.each do |posting| %>
+	<p><%= link_to posting.item_title, posting_path(posting) %></p>
+<% end %>	

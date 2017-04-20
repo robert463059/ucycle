@@ -38,6 +38,7 @@ class PostingsController < ApplicationController
 
   def show 
     @posting = Posting.find(params[:id])
+    @user = @posting.user
   end  
 
   def destroy

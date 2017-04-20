@@ -1,3 +1,6 @@
-<%= link_to "Sign in with Facebook", "/auth/facebook" %><br>
 
+<% if signed_in? %>
+<a href="/users/<%= current_user.id %>/">Profile</a><br>    
 <%= link_to 'Search', search_index_path  %>
+    <% else %>
+    <% end %>

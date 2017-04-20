@@ -7,8 +7,10 @@
   <% end %>
 
   <br>
-  <%= @posting.item_description %><br>
-
+  <p>"<%= @posting.item_description %>"</p>
+  <b>CONTACT: </b><%= @user.forenames %> <%= @user.surname %>, <%= @user.email %>
+  <br>
+  <br>  
 <iframe
   width="350"
   height="350"

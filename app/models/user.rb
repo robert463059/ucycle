@@ -1,8 +1,9 @@
 #In app/models/user.rb    has_many :authentications, :dependent => :destroy
-
 class User < ApplicationRecord
   validates :forenames, presence: true
   validates :surname, presence: true
+  validates :username, presence: true
+  validates :address, presence: true
   has_many :authentications
   has_many :postings
   include Clearance::User
@@ -20,3 +21,4 @@ class User < ApplicationRecord
   end
 
 end
+

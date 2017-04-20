@@ -17,10 +17,25 @@
   <% end %><br>
 
 <%= p.item_description %><br><br>
+  <br>
+
+  <b>CONTACT: </b><%= p.user.forenames %> <%= p.user.surname %>, <%= p.user.email %>
+  <br>
+  <br>  
+<iframe
+  width="350"
+  height="350"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBrsJ45J6WAoZPqKQTFsOv8qqLCoMaCtFg
+    &q=<%= p.user.address %>" allowfullscreen>
+</iframe>
+<br>
 
 <% end %><br>
 
 <% else %>
 
 <% end %>
+
+
 

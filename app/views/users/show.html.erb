@@ -2,6 +2,8 @@
 
 <%= link_to 'Edit User', edit_user_path  %>
 
+<%= link_to 'Search', search_index_path  %>
+
 <br>
 
 <%= image_tag @user.image_url(:thumb) if @user.image? %><br>
@@ -12,7 +14,7 @@
 <%= @user.address %><br>
 <%= @user.city %><br>
 <%= @user.county %><br>
-<%= @user.postal_code %><br>
+<%= @user.postal_code %><br><br>
 
 
 <!-- Trigger the modal with a button -->
@@ -27,7 +29,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">New Posting</h4>
       </div>
       <div class="modal-body">
       	<div class="field">
@@ -52,6 +54,26 @@
   </div>
 </div>
 <% end %>
+
+<br>
+<br>
+
+<h3><%= @user.forenames %>'s postings</h3>
+
+<br>
+
+
+<% @user.postings.each do |p|  %>
+
+<a href="/postings/<%= p.id %>/"><%= p.item_title %></a><br>
+
+ <% p.images.each do |image| %>
+		<%= image_tag image %>
+  <% end %><br>
+
+<%= p.item_description %><br><br>
+
+<% end %><br>
 
 
 

@@ -5,6 +5,7 @@ class SearchController < ApplicationController
 	end	
 
 	def search
+		
 		@posting = Posting.where(item_title: params[:item_title])
 		render 'search/index'
 	end	
